@@ -4,13 +4,13 @@ module.exports = class extends Inhibitor {
 
     constructor(...args) {
         super(...args, {
-            name: 'musicInhib',
+            name: 'generalInhib',
             enabled: true,
             spamProtection: false
         });
     }
 
 	async run(message) {
-		// if( !(message.member.voice.channel) ) { throw 'You are not in a voice channel!'}
+		if( message.channel.type != 'text' ) { throw ':no_entry_sign: | You can run commands only in servers!' }
 	}
 };
